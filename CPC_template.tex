@@ -5,7 +5,7 @@
 %% completed and which will give the correct layout in the
 %% preprint and the journal.
 %% The `elsarticle' style is used and more information on this style
-%% can be found at 
+%% can be found at
 %% http://www.elsevier.com/wps/find/authorsview.authors/elsarticle.
 %%
 %%
@@ -114,13 +114,14 @@
 %% \address[label1]{<address>}
 %% \address[label2]{<address>}
 
-\author[a]{Jianxin Liu\corref{author}}
-\author[a,b]{Second Author}
-\author[b]{Third Author}
+\author[a,b]{Jiakuan Xu}
+\author[c]{Jianxin Liu\corref{author}}
+%\author[b]{Third Author}
 
-\cortext[author] {Corresponding author.\\\textit{E-mail address:} firstAuthor@somewhere.edu}
-\address[a]{High Speed Aerodynamics Laboratory, Tianjin University, China}
+\cortext[author] {Corresponding author.\\\textit{E-mail address:} shookware@tju.edu.cn}
+\address[a]{Department of Mechanics, Tianjin University, China}
 \address[b]{Second Address}
+\address[c]{Third Address}
 
 \begin{abstract}
 %% Text of abstract
@@ -137,7 +138,7 @@ In addition to the manuscript you must supply: the program source code; job cont
 
 \begin{keyword}
 %% keywords here, in the form: keyword \sep keyword
-instability; transition; PSE; boundary layer.
+Bi-Global instability; inviscid instability; 3D boundary layers.
 
 \end{keyword}
 
@@ -159,24 +160,24 @@ instability; transition; PSE; boundary layer.
 {\em Manuscript Title:}START: a stability and transition analysis and research toolkit                                       \\
 %{\em Authors:}                                                \\
 {\em Program Title:} START 1.0                                          \\
-{\em Journal Reference:}                                      \\
+% {\em Journal Reference:}                                      \\
   %Leave blank, supplied by Elsevier.
 %{\em Catalogue identifier:}                                   \\
   %Leave blank, supplied by Elsevier.
-{\em Licensing provisions:} GPL v3                                  \\
+{\em Licensing provisions:} LGPL                                  \\
   %enter "none" if CPC non-profit use license is sufficient.
 {\em Programming language:} FORTRAN 2008                                  \\
-{\em Computer:} Any PC workstation                                              \\
+{\em Computer:} Any PC workstation, cluster                                              \\
   %Computer(s) for which program has been designed.
 {\em Operating system:} OSX, Linux                                      \\
   %Operating system(s) for which program has been designed.
-{\em RAM:} 1G bytes                                              \\
+{\em RAM:} 4G bytes at least                                            \\
   %RAM in bytes required to execute program with typical data.
 %{\em Number of processors used:}                              \\
   %If more than one processor.
 %{\em Supplementary material:}                                 \\
   % Fill in if necessary, otherwise leave out.
-{\em Keywords:} instability, transition, PSE, boundary layer.  \\
+{\em Keywords:} Bi-Global instability; inviscid instability; 3D boundary layers.  \\
   % Please give some freely chosen keywords that we can use in a
   % cumulative keyword index.
 {\em Classification:} Gases and Fluids                                       \\
@@ -193,8 +194,9 @@ instability; transition; PSE; boundary layer.
   %Only required for a New Version summary, otherwise leave out.
 %{\em Does the new version supersede the previous version?:}*   \\
   %Only required for a New Version summary, otherwise leave out.
-{\em Nature of problem:}\\
-  %Describe the nature of the problem here.
+{\em Nature of problem:}
+The linear instabilities in boundary layers can be described by dispersion relations. The goal of the linear instability analysis is to obtain these dispersion relations for given parameters. When the boundary layer is two dimensional, the solver is easy to be found in many textbooks especially when the flow is incompressible. However, the boundary layers are three dimensional in lots of stages. At this time, the governing equations of the dispersion relations are more complex than that in 2D flows. The instability problem in 3D flows are often called Bi-Global instability because the solutions are functions of two coordinates. The solver for this type problem is hard to be found. The aim of START is to establish an efficiency and friendly toolkit to solve the Bi-Global instability equations. It contains many specific solvers, including the inviscid/viscous Bi-Global instability for the incompressible/compressible flows.
+%Describe the nature of the problem here.
    \\
 {\em Solution method:}\\
   %Describe the method solution here.
@@ -210,19 +212,19 @@ instability; transition; PSE; boundary layer.
    \\
 %{\em Unusual features:}\\
   %Describe any unusual features of the program/problem here.
-   \\
-{\em Additional comments:}\\
-  %Provide any additional comments here.
-   \\
-{\em Running time:}\\
-  %Give an indication of the typical running time here.
-   \\
+%    \\
+% {\em Additional comments:}\\
+%   %Provide any additional comments here.
+%    \\
+% {\em Running time:}\\
+%   %Give an indication of the typical running time here.
+%    \\
 
 \begin{thebibliography}{0}
-\bibitem{1}Reference 1         % This list should only contain those items referenced in the                 
-\bibitem{2}Reference 2         % Program Summary section.   
+\bibitem{1}Reference 1         % This list should only contain those items referenced in the
+\bibitem{2}Reference 2         % Program Summary section.
 \bibitem{3}Reference 3         % Type references in text as [1], [2], etc.
-                               % This list is different from the bibliography at the end of 
+                               % This list is different from the bibliography at the end of
                                % the Long Write-Up.
 \end{thebibliography}
 %* Items marked with an asterisk are only required for new %versions
@@ -234,18 +236,22 @@ instability; transition; PSE; boundary layer.
 \section{Introduction}
 \label{introduction}
 
-\section{Methods}
-\label{methods}
-\subsection{LST}
-\subsection{PSE}
-\subsection{Adjoint PSE}
+\section{Instability Equations}
+\label{instability equations}
+\subsection{Incompressible inviscid equations}
+\subsection{Compressible inviscid equations}
+\subsection{Bi-Global instability}
+\section{Numerical Methodology}\label{numerical method}
+
 \section{Workflow}
+\label{workflow}
 
 \section{Input file and output files}
+\label{input and output}
 
-\section{Tests and examples}
+\section{Tests and examples}\label{Cases}
 
-\section{Conclusion and outlook}
+\section{Conclusion and outlook}\label{conclusion}
 
 
 %% The Appendices part is started with the command \appendix;
@@ -289,4 +295,4 @@ instability; transition; PSE; boundary layer.
 \end{document}
 
 %%
-%% End of file 
+%% End of file
